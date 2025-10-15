@@ -5,9 +5,9 @@ import ProHeroSlider from "../components/ProHeroSlider";
 import Script from "next/script";
 import MapEmbed from "../components/MapEmbed";
 export const metadata = {
-  title: "Hair International & Beauty | Best Hair Salon in Port Elizabeth",
+  title: "Hair International  | Best Hair Salon in Port Elizabeth",
   description:
-    "The most experienced salon in Port Elizabeth. Hair International & Beauty offers premium haircuts, coloring, and beauty services. View gallery, services, hours, and location.",
+    "The most experienced salon in Port Elizabeth. Hair International  offers premium haircuts, coloring, and beauty services. View gallery, services, hours, and location.",
   alternates: { canonical: "http://localhost:3000/" },
 };
 
@@ -41,8 +41,8 @@ export default function HomePage() {
     const meta = captions[file] || {};
     return {
       src,
-      alt: meta.alt || "Hair International & Beauty — salon image",
-      title: meta.title || "Hair International & Beauty",
+      alt: meta.alt || "Hair International  — salon image",
+      title: meta.title || "Hair International",
       caption:
         meta.caption ||
         "The most experienced salon in Port Elizabeth — modern cuts, color, and care.",
@@ -59,7 +59,7 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HairSalon",
-    name: "Hair International & Beauty",
+    name: "Hair International",
     image: sliderImages.length ? sliderImages : ["/images/slider/slide-1.jpg"],
     url: "http://localhost:3000",
     slogan: "The most experienced salon in Port Elizabeth",
@@ -104,7 +104,7 @@ export default function HomePage() {
       <ProHeroSlider items={sliderItems} />
 
       {/* Welcome */}
-      <Section id="welcome" title="Welcome to Hair International & Beauty">
+      <Section id="welcome" title="Welcome to Hair International">
         <p>
           <strong>The most experienced salon in Port Elizabeth</strong> —
           trusted by locals for decades. We deliver modern haircuts, precise
@@ -120,10 +120,9 @@ export default function HomePage() {
       {/* About preview */}
       <Section id="about" title="About Us">
         <p>
-          Founded in 1990, Hair International & Beauty has served Port Elizabeth
-          with passion and craftsmanship. Our philosophy is simple: blend
-          classic technique with modern trends, and treat every guest like
-          family.
+          Founded in 1990, Hair International has served Port Elizabeth with
+          passion and craftsmanship. Our philosophy is simple: blend classic
+          technique with modern trends, and treat every guest like family.
         </p>
         <p>
           We use salon-grade products and careful techniques to protect hair
@@ -167,8 +166,8 @@ export default function HomePage() {
             <h3 className="text-xl font-semibold mb-2">Location</h3>
             <MapEmbed
               embedSrc="https://maps.google.com/maps?q=Hair%20International%20%26%20Beauty%20Port%20Elizabeth&z=15&output=embed"
-              query="Hair International & Beauty Port Elizabeth"
-              title="Hair International & Beauty on Google Maps"
+              query="Hair International  Port Elizabeth"
+              title="Hair International  on Google Maps"
             />
           </div>
           <div>

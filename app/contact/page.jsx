@@ -1,9 +1,9 @@
 import MapEmbed from "../../components/MapEmbed";
 
 export const metadata = {
-  title: "Contact | Hair International & Beauty",
+  title: "Contact | Hair International",
   description:
-    "Contact Hair International & Beauty in Port Elizabeth. View hours, map, and message us to book your appointment.",
+    "Contact Hair International  in Port Elizabeth. View hours, map, and message us to book your appointment.",
 };
 
 export default function ContactPage() {
@@ -93,8 +93,8 @@ export default function ContactPage() {
 
             <MapEmbed
               embedSrc="https://maps.google.com/maps?q=Hair%20International%20%26%20Beauty%20Port%20Elizabeth&z=15&output=embed"
-              query="Hair International & Beauty Port Elizabeth"
-              title="Hair International & Beauty on Google Maps"
+              query="Hair International  Port Elizabeth"
+              title="Hair International  on Google Maps"
             />
 
             <div className="mt-4">

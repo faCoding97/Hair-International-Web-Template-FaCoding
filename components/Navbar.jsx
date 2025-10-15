@@ -19,7 +19,7 @@ export default function Navbar() {
           href="/"
           className="font-extrabold tracking-tight text-lg md:text-xl">
           <span className="text-gray-900">Hair International</span>
-          <span className="text-green-600"> & Beauty</span>
+          <span className="text-green-600"> </span>
         </Link>
         <HamburgerButton open={open} onToggle={() => setOpen((v) => !v)} />
 

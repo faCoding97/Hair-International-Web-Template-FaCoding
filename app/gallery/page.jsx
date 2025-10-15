@@ -2,9 +2,9 @@ import fs from "fs";
 import path from "path";
 
 export const metadata = {
-  title: "Gallery | Hair International & Beauty",
+  title: "Gallery | Hair International",
   description:
-    "View our salon gallery: haircuts, coloring, styling, and beauty looks from Port Elizabeth’s trusted team."
+    "View our salon gallery: haircuts, coloring, styling, and beauty looks from Port Elizabeth’s trusted team.",
 };
 
 function getImagesFrom(dirRelativeToPublic) {
@@ -25,12 +25,15 @@ export default function GalleryPage() {
         <h1 className="text-3xl font-bold mb-6">Gallery</h1>
         {gallery.length === 0 ? (
           <p className="text-gray-600">
-            Add images to <code>/public/images/gallery</code> to populate this page.
+            Add images to <code>/public/images/gallery</code> to populate this
+            page.
           </p>
         ) : (
           <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 list-none p-0">
             {gallery.map((src, i) => (
-              <li key={src} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
+              <li
+                key={src}
+                className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
                 {/* Using plain img to avoid layout warnings without dimensions; object-fit via class */}
                 <img
                   src={src}
