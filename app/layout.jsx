@@ -32,6 +32,9 @@ export const metadata = {
     description: "The most experienced salon in Port Elizabeth.",
     images: ["/images/slider/slide-1.jpg"],
   },
+  verification: {
+    google: "dKQzs1JM_VAihmAWs_4w86bKV9GGaqnpIiJzsWKCEqg",
+  },
 };
 
 export default function RootLayout({ children }) {
