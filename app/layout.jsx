@@ -33,7 +33,7 @@ export const metadata = {
     images: ["/images/slider/slide-1.jpg"],
   },
   verification: {
-    google: "dKQzs1JM_VAihmAWs_4w86bKV9GGaqnpIiJzsWKCEqg",
+    google: `d<meta name="google-site-verification" content="dKQzs1JM_VAihmAWs_4w86bKV9GGaqnpIiJzsWKCEqg" />`,
   },
 };
 
