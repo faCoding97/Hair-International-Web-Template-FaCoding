@@ -1,0 +1,23 @@
+{
+  "slide-1.jpg": {
+    "title": "Precision Cuts. Effortless Confidence.",
+    "caption": "Tailored haircuts and blow-drys that fit your lifestyle.",
+    "alt": "Stylist finishing a precise haircut in Port Elizabeth",
+    "ctaText": "See Services",
+    "ctaHref": "/services"
+  },
+  "slide-2.jpg": {
+    "title": "Shine with Expert Color",
+    "caption": "Highlights and colour with hair health first.",
+    "alt": "Hair colouring with foils at the salon",
+    "ctaText": "Book Colour",
+    "ctaHref": "/contact"
+  },
+  "slide-3.jpg": {
+    "title": "Special Event Styling",
+    "caption": "Updos and polished looks for weddings and occasions.",
+    "alt": "Elegant updo styled by our team",
+    "ctaText": "Enquire",
+    "ctaHref": "/contact"
+  }
+}

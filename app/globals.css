@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  --brand-accent: theme(colors.green.500);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-800;
+}
+
+a {
+  @apply text-green-600 hover:text-gray-950;
+}
+
+/* Utility helpers */
+.container-responsive {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+/* Slider heights */
+.hero-slider {
+  height: clamp(220px, 45vw, 520px);
+}
+.hero-slide-image {
+  object-fit: cover;
+}
+/* Ensure images don't drag-select */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* Responsive iframe wrapper */
+.embed-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Pro slider enhancements --- */
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+.kenburns {
+  animation: kenburns 9s ease-in-out infinite alternate;
+}
+
+@keyframes autoplayProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.animate-autoplay-progress {
+  animation: autoplayProgress 3.8s linear infinite;
+}
+
+/* Fancy Hamburger */
+.hiburger {
+  position: relative;
+  width: 24px;
+  height: 18px;
+}
+.hiburger-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgb(17 24 39);
+  border-radius: 9999px;
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1),
+    top 0.35s cubic-bezier(0.65, 0.05, 0.36, 1), opacity 0.25s ease,
+    width 0.25s ease;
+}
+.hiburger-bar-1 {
+  top: 0;
+  width: 100%;
+}
+.hiburger-bar-2 {
+  top: 8px;
+  width: 90%;
+}
+.hiburger-bar-3 {
+  top: 16px;
+  width: 70%;
+}
+button:hover .hiburger-bar-1,
+button:hover .hiburger-bar-2,
+button:hover .hiburger-bar-3 {
+  width: 100%;
+}
+.hiburger[data-open="true"] .hiburger-bar-1 {
+  top: 8px;
+  transform: rotate(45deg);
+  width: 100%;
+}
+.hiburger[data-open="true"] .hiburger-bar-2 {
+  opacity: 0;
+  transform: scaleX(0.5);
+}
+.hiburger[data-open="true"] .hiburger-bar-3 {
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 100%;
+}
