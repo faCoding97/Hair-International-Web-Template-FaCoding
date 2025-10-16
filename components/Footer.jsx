@@ -7,8 +7,9 @@ export default function Footer() {
           South Africa
         </p>
         <p className="text-gray-500">
-          Written by{" "}
+          <span className=" whitespace-nowrap">Written by:</span>
           <a
+            className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r font-medium rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap text-sm sm:text-base"
             href="https://www.linkedin.com/in/farazaghababayi"
             target="_blank"
             rel="noopener noreferrer">
