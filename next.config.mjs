@@ -1,7 +1,40 @@
+// next.config.mjs
+const isDev = process.env.NODE_ENV !== "production";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: { unoptimized: false },
   async headers() {
+    // دامنه‌های مورد نیازت
+    const ga = [
+      "https://www.googletagmanager.com",
+      "https://www.google-analytics.com",
+    ];
+    const vercelVitals = "https://vitals.vercel-insights.com";
+
+    const common = [
+      "default-src 'self'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' data:",
+      "frame-src https://www.google.com https://maps.google.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self' mailto:",
+    ];
+
+    // ── script-src
+    const scriptSrc = isDev
+      ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+      : `script-src 'self' 'unsafe-inline' ${ga.join(" ")}`;
+
+    // ── connect-src (برای آنالیتیکس و Vercel Analytics و HMR)
+    const connectSrc = isDev
+      ? `connect-src 'self' ws: wss: ${vercelVitals} ${ga.join(" ")}`
+      : `connect-src 'self' ${vercelVitals} ${ga.join(" ")}`;
+
+    const csp = [scriptSrc, connectSrc, ...common].join("; ");
+
     return [
       {
         source: "/_next/static/:path*",
@@ -27,22 +60,12 @@ const nextConfig = {
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          {
-            key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline'; " +
-              "style-src 'self' 'unsafe-inline'; " +
-              "img-src 'self' data: blob: https:; " +
-              "connect-src 'self'; " +
-              "frame-src https://www.google.com https://maps.google.com; " +
-              "font-src 'self' data:; " +
-              "object-src 'none'; base-uri 'self'; form-action 'self' mailto:",
-          },
+          { key: "Content-Security-Policy", value: csp },
           { key: "Strict-Transport-Security", value: "max-age=31536000" },
         ],
       },
     ];
   },
 };
+
 export default nextConfig;
